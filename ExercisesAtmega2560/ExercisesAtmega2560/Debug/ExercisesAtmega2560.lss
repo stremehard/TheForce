@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.6  C:\Users\StremeHard\Documents\Atmel Studio\7.0\ExercisesAtmega2560\ExercisesAtmega2560\main.asm Thu Mar 22 17:32:27 2018
+AVRASM ver. 2.2.6  C:\Users\StremeHard\Documents\GitHub\TheForce\ExercisesAtmega2560\ExercisesAtmega2560\main.asm Thu Mar 22 19:19:05 2018
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.132\avrasm\inc\m2560def.inc'
                                  
@@ -1850,8 +1850,10 @@ AVRASM ver. 2.2.6  C:\Users\StremeHard\Documents\Atmel Studio\7.0\ExercisesAtmeg
                                  
                                  ; Replace with your application code
                                  
-000000 e402                      	ldi r16, 0b0100_0010	;load value into register r16	
-000001 0000                      	nop		;does nothing, but provides a place to put a breakpoint
+000000 e20a                      	ldi r16, 42		;load 42 (0x2A) to the R16
+000001 e211                      	ldi r17, 33		;load 33 (0x21) to the R17
+000002 eb22                      	ldi r18, 0b10110010	;load 10110010 (0xB2) to the R18
+000003 0000                      	nop				;breakpoint
 
 
 RESOURCE USE INFORMATION
@@ -1871,10 +1873,10 @@ counted separately from r26..r31 here.
 "ATmega2560" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:   1 r17:   0 r18:   0 r19:   0 r20:   0 
+r13:   0 r14:   0 r15:   0 r16:   1 r17:   1 r18:   1 r19:   0 r20:   0 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
-Registers used: 1 out of 35 (2.9%)
+Registers used: 3 out of 35 (8.6%)
 
 "ATmega2560" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
@@ -1887,7 +1889,7 @@ clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   0 cpse  :   0 dec   :   0 eicall:   0 eijmp :   0 elpm  :   0 
 eor   :   0 fmul  :   0 fmuls :   0 fmulsu:   0 icall :   0 ijmp  :   0 
-in    :   0 inc   :   0 jmp   :   0 ld    :   0 ldd   :   0 ldi   :   1 
+in    :   0 inc   :   0 jmp   :   0 ld    :   0 ldd   :   0 ldi   :   3 
 lds   :   0 lpm   :   0 lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 
 mul   :   0 muls  :   0 mulsu :   0 neg   :   0 nop   :   1 or    :   0 
 ori   :   0 out   :   0 pop   :   0 push  :   0 rcall :   0 ret   :   0 
@@ -1902,7 +1904,7 @@ Instructions used: 2 out of 116 (1.7%)
 "ATmega2560" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000004      4      0      4  262144   0.0%
+[.cseg] 0x000000 0x000008      8      0      8  262144   0.0%
 [.dseg] 0x000200 0x000200      0      0      0    8192   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    4096   0.0%
 

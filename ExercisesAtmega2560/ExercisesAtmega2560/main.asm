@@ -8,5 +8,7 @@
 
 ; Replace with your application code
 
-	ldi r16, 0b0100_0010	;load value into register r16	
-	nop		;does nothing, but provides a place to put a breakpoint
+	ldi r16, 42		;load 42 (0x2A) to the R16
+	ldi r17, 33		;load 33 (0x21) to the R17
+	ldi r18, 0b10110010	;load 10110010 (0xB2) to the R18
+	nop				;breakpoint
